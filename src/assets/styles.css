@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #e2e2e2;
+}
+#header{
+    width: 100%;
+    height: 160px;
+    background-color: #4caf50;
+    padding: 20px 10px;
+}
+#header h2{
+    text-align: center;
+    margin: auto;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 100;
+}
+main{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px 10px 10px;
+    height: 100%;
+}
+main .top{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 5%;
+}
+main .top article{
+    cursor: pointer;
+    color: #6f6f6f;
+    margin-top: -50px;
+    height: 125px;
+    flex: 1;
+    padding: 20px 20px 30px 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 2px 3px 4px rgba(0 0 0 100);
+    transition: all .5s ease;
+}
+main .top article:first-child:hover{
+    transform: translateY(-5px);
+    border-bottom: 4px solid #4caf50;
+}
+main .top article:nth-child(2):hover{
+    transform: translateY(-5px);
+    border-bottom: 4px solid #f44336;
+}
+main .top article:last-child:hover{
+    transform: translateY(-5px);
+    border-bottom: 4px solid #fff;
+}
+main .top article header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .top article header span{
+    font-size: 1rem;
+}
+main .top article header i{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 100;
+}
+main .top article strong{
+    font-size: 1.4rem;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+main .top article strong i{
+    margin-right: 6px;
+    font-size: .8rem;
+    font-weight: 100;
+}
+main .top article:nth-child(1){
+    opacity: 0;
+    transform: translateX(-25%);
+    animation: marvel .6s ease forwards;
+}
+main .top article:nth-child(1) header i{
+    color: #4caf50;
+}
+main .top article:nth-child(2){
+    opacity: 0;
+    transform: translateY(25%);
+    animation: marvel .6s .4s ease forwards;
+}
+main .top article:nth-child(2) header i{
+    color: #f44336;
+}
+main .top article:nth-child(3){
+    color: #fff;
+    background-color: #f44336;
+    transform: translateY(-25%);
+    opacity: 0;
+    animation: marvel .6s .7s ease forwards;
+}
+
+main .top article:nth-child(3) strong{
+    color: #fff !important;
+}
+@keyframes top-presentation{
+    to{
+        transform: initial;
+        opacity: initial;
+        filter: initial;
+    }
+}
+@media(max-width:626px) {
+    main .top article{
+        height: 100px;
+        padding: 12px 12px 20px 12px;
+    }
+    main .top article header i{
+        font-size: 1.5rem;
+    }
+    main .top article strong{
+        font-size: .9rem;
+    }
+    main .top article strong i{
+        margin-right: 3px;
+        font-size: .5rem;
+    }
+}
+@media(max-width:416px) {
+    main .top{
+        flex-direction: column;
+        gap: 60px;
+    }
+    main .top article{
+        flex-basis: auto;
+    }
+}
+main section{
+    flex: 1;
+}
+main section table{
+    width: 100%;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+}
+
+section table thead{
+    width: 100%;
+    padding: 0 8px;
+}
+section table thead tr{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0fr;
+    gap: 6px;
+}
+section table thead th{
+    background-color: #fff;
+    color: #555;
+    font-size: 14px;
+    text-align: left;
+    padding: 15px 25px 15px;
+    border-radius: 2px;
+}
+section table thead th:last-child{
+    padding: 6px;
+    max-width: 60px;
+    width: 40px;
+}
+section table tbody{
+    padding: 0 4px;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow: auto;
+    transform: translateX(-20%);
+    opacity: 0;
+    animation: marvel 1.5s ease forwards;
+}
+@keyframes marvel{
+    to{
+        transform: initial;
+        opacity: initial;
+        filter: initial;
+    }
+}
+section table tbody::-webkit-scrollbar{
+    width: 6px;
+    background-color: #ddd;
+    padding: 6px;
+    display: block;
+}
+section table tbody::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+    border: none;
+    border-radius: 3px;
+}
+section table tbody tr{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0fr;
+    gap: 6px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    min-height: 40px;
+    cursor: pointer;
+}
+section table tbody td{
+    flex: 1;
+    background-color: #fff;
+    display: inline-block;
+    align-items: center;
+    color: #777;
+    font-size: 15px;
+    text-align: left;
+    padding: 20px 25px 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-height: 80px;
+    transition: background .3s;
+}
+section table tbody tr:hover td{
+    background-color: #f2f2f2;
+}
+
+section table tbody td:nth-child(2){
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+section table tbody td:nth-child(2).good{
+    color: #4caf50;
+}
+section table tbody td:nth-child(2).bad{
+    color: #f44336;
+}
+section table tbody td:last-child{
+    flex: content;
+    padding: 0;
+    max-width: 60px;
+    width: 40px;
+}
+section table tbody td:last-child button{
+    display: flex;
+    padding: 6px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+section table tbody td:last-child button i{
+    margin: auto;
+    font-size: 1.2rem;
+    color: #f44336;
+}
+#button_add{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 0;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: #3f8341;
+    cursor: pointer;
+    transition: background .4s ease;
+}
+#button_add i{
+    font-size: .9rem;
+    font-size: 100;
+    color: #fff;
+    margin: auto;
+    transition: transform .2s ease;
+    
+}
+#button_add:hover{
+    background-color: #4caf50;
+}
+
+#button_add:hover i{
+    transform: scale(1.2);
+}
+
+@media(max-width:416px) {
+    section table thead th{
+        padding: 10px 15px 10px;
+        font-size: .7rem;
+    }
+    section table tbody td{
+        padding: 10px 15px 10px;
+        font-size: .5rem;
+    }
+    section table tbody td:last-child button i{
+        font-size: .8rem;
+    }
+}
