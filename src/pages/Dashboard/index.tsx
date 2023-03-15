@@ -4,6 +4,7 @@ import {FaArrowCircleUp,FaPlus,FaArrowCircleDown,FaMinus,FaMoneyBill,FaMinusCirc
 import CreateCard from "../../components/CreateCard";
 import { DespesasContex } from "../../context/Provider";
 import { DeleteDespesaCase } from "../../useCases/DeleteDespesa";
+import Credits from "../../components/credits";
 
 function Dashboard(){
     const [visible,setVisible] = React.useState(false);
@@ -72,24 +73,25 @@ function Dashboard(){
                         <TableBody>
                             {despesas.map((despesa,index)=>(
                                 <TableBodyRow key={index}>
-                                 <td>{despesa.descricao}</td>
-                                 <td>{despesa.tipo}</td>
-                                 <td className={despesa.entrada ? "good": "bad"}>{despesa.entrada ? <FaPlus/>: <FaMinus/>} {despesa.valor}</td>
-                                 <td>{despesa.created_at && (new Date(despesa.created_at)).toLocaleDateString()}</td>
-                                 <td>
-                                    <button onClick={e=>despesa.id && deleteDespesa(despesa.id)}><FaMinusCircle/></button>
-                                </td>
+                                    <td>{despesa.descricao}</td>
+                                    <td>{despesa.tipo}</td>
+                                    <td className={despesa.entrada ? "good": "bad"}>{despesa.entrada ? <FaPlus/>: <FaMinus/>} {despesa.valor}</td>
+                                    <td>{despesa.created_at && (new Date(despesa.created_at)).toLocaleDateString()}</td>
+                                    <td>
+                                        <button onClick={e=>despesa.id && deleteDespesa(despesa.id)}><FaMinusCircle/></button>
+                                    </td>
                              </TableBodyRow>     
                             ))}
                         </TableBody>
                     </Table>
                 </MainContent>               
             </Content>
-                {visible ? <CreateCard visible={setVisible}/>:(
-                <ButtonAdd onClick={e=>setVisible(true)}>
-                    <FaPlus/>
-                </ButtonAdd>
+            {visible ? <CreateCard visible={setVisible}/>:(
+                    <ButtonAdd onClick={e=>setVisible(true)}>
+                        <FaPlus/>
+                    </ButtonAdd>
             )}
+            <Credits/>
         </Container>
     )
 }

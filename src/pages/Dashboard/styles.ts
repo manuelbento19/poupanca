@@ -291,11 +291,11 @@ export const TableBodyRow = styled.tr`
 `
 export const ButtonAdd = styled.button`
     position: fixed;
-    bottom: 20px;
+    bottom: 35px;
     right: 20px;
     border: 0;
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     display: flex;
     border-radius: 50%;
     padding: 6px;
